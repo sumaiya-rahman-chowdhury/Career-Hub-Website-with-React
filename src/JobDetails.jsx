@@ -6,8 +6,9 @@ const JobDetails = () => {
     const jobs = useLoaderData();
     const { id } = useParams();
     // console.log(id)
+    console.log(typeof(jobs))
     const job = jobs.find(job => job.id == id)
-    console.log(typeof(job))
+    console.log((job))
     const handleApplyJob = () =>{
         saveJobApplication(id)
        toast('Applied Succesfully')

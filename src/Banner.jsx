@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Banner = () => {
     return (
@@ -13,7 +12,7 @@ const Banner = () => {
             </div>
             {/* Banner Image */}
             <div>
-                <img src="../public/images/user.png" alt="" />
+                <img src="user.png" alt="" />
             </div>
            </div>
         </div>
