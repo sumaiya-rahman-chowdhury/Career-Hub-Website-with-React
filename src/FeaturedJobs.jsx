@@ -26,8 +26,8 @@ const FeaturedJobs = () => {
                     jobs.slice(0,dataLength).map(job=><Job key={job.id} job={job}></Job>)
                 }
             </div>
-            <div className='flex justify-center my-10'>
-                <button className='main-btn py-[19px] px-[28px]'>See All Jobs</button>
+            <div className={`flex justify-center my-10 ${dataLength === jobs.length && 'hidden'}`}>
+                <button onClick={()=>setDataLength(jobs.length)} className='main-btn py-[19px] px-[28px]'>See All Jobs</button>
             </div>
             </div>
         </div>
