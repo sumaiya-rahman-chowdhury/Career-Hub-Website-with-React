@@ -10,10 +10,10 @@ const saveJobApplication = id =>{
     const storedApplication = getStoredOne();
     const exist = storedApplication.find(jobId=>jobId == id)
     if(!exist){
-        storedApplication.push(id)
+        storedApplication.push(parseInt(id))
         localStorage.setItem('job-applications',JSON.stringify(storedApplication));
     }
 }
 
 
-export {saveJobApplication}
+export {saveJobApplication,getStoredOne}

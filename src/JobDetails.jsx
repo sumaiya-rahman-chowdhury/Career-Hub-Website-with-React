@@ -5,9 +5,9 @@ import { saveJobApplication } from "./utility/LocalStorage";
 const JobDetails = () => {
     const jobs = useLoaderData();
     const { id } = useParams();
-    console.log(id)
+    // console.log(id)
     const job = jobs.find(job => job.id == id)
-    console.log(job)
+    console.log(typeof(job))
     const handleApplyJob = () =>{
         saveJobApplication(id)
        toast('Applied Succesfully')
