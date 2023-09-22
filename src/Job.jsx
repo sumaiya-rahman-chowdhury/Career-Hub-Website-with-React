@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import { GrLocation } from 'react-icons/gr';
+import { Link } from 'react-router-dom';
 const Job = ({job}) => {
     console.log(job)
     return (
@@ -19,7 +21,7 @@ const Job = ({job}) => {
             <p> Salary :{job.salary}</p>
            </div>
            {/*  */}
-            <button className='main-btn px-[18px] py-[11px]'>View Details</button>
+           <Link to={`/job/${job.id}`}> <button className='main-btn px-[18px] py-[11px]'>View Details</button></Link>
             </div>
         </div>
     );
