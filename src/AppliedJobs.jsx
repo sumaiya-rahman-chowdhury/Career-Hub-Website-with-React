@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { getStoredOne } from './utility/LocalStorage';
 
 const AppliedJobs = () => {
+    const jobs = useLoaderData();
     const [appliedJobs, setAppliedJobs] = useState([])
     const [displayJobs, setDisplayJobs] = useState([])
 
@@ -23,15 +24,25 @@ const AppliedJobs = () => {
     }
 
 
-    const jobs = useLoaderData();
+    
     useEffect(() => {
         const stroredJobsId = getStoredOne();
-        if (jobs.length > 0) {
-            const appliedJobs = jobs.filter(job => stroredJobsId.includes(job.id));
-            setAppliedJobs(appliedJobs)
-            setDisplayJobs(appliedJobs)
-        }
-    }, [])
+        console.log((stroredJobsId))
+    if( jobs.length > 0){
+       
+            const jobsApplied = [];
+            for (const id of stroredJobsId) {
+                console.log(typeof(jobs))
+                const job = jobs.find((job) => job.id === id);
+                if (job) {
+                    jobsApplied.push(job)
+                }
+            }
+            setAppliedJobs(jobsApplied)
+            setDisplayJobs(jobsApplied)
+       
+    }
+    }, [jobs])
     return (
         <div>
             <details className="dropdown mb-32">
